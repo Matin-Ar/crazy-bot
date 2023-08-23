@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "build": "",
     "register": "node commands.js",
     "dev": "nodemon app.js"
   },
