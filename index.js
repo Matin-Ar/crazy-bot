@@ -1,4 +1,5 @@
 require('dotenv').config()
+const keepAlive = require("./server")
 
 const { Client, Events, GatewayIntentBits } = require('discord.js')
 
@@ -20,5 +21,7 @@ client.on('interactionCreate', async interaction => {
       await interaction.reply(`<@${interaction.user.id}> to yek bedard nakhor hasti :)`);
     }
 })
+
+keepAlive()
 
 client.login(process.env.DISCORD_TOKEN)
