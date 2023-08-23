@@ -17,4 +17,4 @@ client.on('messageCreate', (message) => {
     console.log(message)
 })
 
-client.login(process.env.DISCORD_TOKEN)
+client.login('MTE0MzY4ODQ4ODczNTIyNzk0NA.GcUZVO.zfF_Z37dREgNWQJpccWobUgnDwiEi0JKlziwN0')
