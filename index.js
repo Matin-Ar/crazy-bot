@@ -1,22 +1,24 @@
 require('dotenv').config()
 
-const { Client, IntentsBitField } = require('discord.js')
+const { Client, GatewayIntentBits } = require('discord.js')
 
 const client = new Client({
     intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMembers,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent
+        GatewayIntentBits.Guilds
     ]
 })
 
-client.on('ready', (c) => {
-    console.log(`${c.user.tag} is online.`)
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
 })
 
-client.on('messageCreate', (message) => {
-    console.log(message)
+client.on('interactionCreate', async interaction => {
+    console.log(interaction)
+    if (!interaction.isChatInputCommand()) return;
+  
+    if (interaction.commandName === 'ping') {
+      await interaction.reply('Pong!');
+    }
 })
 
 client.login(process.env.DISCORD_TOKEN)
