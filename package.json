@@ -2,11 +2,11 @@
   "name": "crazy-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node index.js",
     "build": "npm install",
-    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
     "discord.js": "^14.13.0"
   },
   "devDependencies": {
-    "env-cmd": "^10.1.0",
     "nodemon": "^3.0.1"
   }
 }
